@@ -1,0 +1,20 @@
+{
+  "name": "api_sever",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.12.2",
+    "express": "^4.19.2",
+    "express-xml-bodyparser": "^0.3.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.0",
+    "xml2js": "^0.6.2"
+  }
+}

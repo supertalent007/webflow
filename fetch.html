@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+
+<body>
+    <div id="data-container">
+        <!-- Fetched data will be displayed here -->
+    </div>
+
+    <script>
+        // The URL from which we want to fetch data
+        const apiUrl = 'https://c563-104-223-97-47.ngrok-free.app';
+
+        // Fetches data from the API URL
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json(); // We expect a JSON response
+            })
+            .then(data => {
+                // Handles the JSON data here
+                // For this example, we'll just display it directly
+                document.getElementById('data-container').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                // If there is any error, you'll see it here
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('data-container').textContent = 'Error fetching data.';
+            });
+    </script>
+</body>
+
+</html>
